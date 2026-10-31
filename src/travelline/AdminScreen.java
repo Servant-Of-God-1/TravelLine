@@ -37,6 +37,8 @@ public class AdminScreen extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,6 +56,8 @@ public class AdminScreen extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,17 +86,30 @@ public class AdminScreen extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 480, 160));
 
         jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton3.setText("Karyawan");
+        jButton3.setText("Tambah Aset Kendaraan");
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 440, 110));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 440, 110));
 
         jButton6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jButton6.setText("Konfigurasi Jadwal");
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 440, 110));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 700, 180, 40));
+
+        jButton4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jButton4.setText("Karyawan");
+        jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 440, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    HomeScreen home = new HomeScreen();
+    home.setVisible(true);
+    
+    this.dispose();  
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,7 +137,9 @@ public class AdminScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
