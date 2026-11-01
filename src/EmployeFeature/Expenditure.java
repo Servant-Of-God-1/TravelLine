@@ -2,20 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package travelline;
+package EmployeFeature;
 
 /**
  *
  * @author USER
  */
-public class FinancialStatement extends javax.swing.JFrame {
+public class Expenditure extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FinancialStatement.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Expenditure.class.getName());
 
     /**
-     * Creates new form financialstatements
+     * Creates new form Expenditure
      */
-    public FinancialStatement() {
+    public Expenditure() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class FinancialStatement extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FinancialStatement().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Expenditure().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

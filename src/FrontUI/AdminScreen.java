@@ -2,20 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package travelline;
+package FrontUI;
 
 /**
  *
  * @author USER
  */
-public class CashierScreen extends javax.swing.JFrame {
+public class AdminScreen extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CashierScreen.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminScreen.class.getName());
 
     /**
      * Creates new form AdminScreen
      */
-    public CashierScreen() {
+    public AdminScreen() {
         initComponents();
     }
 
@@ -37,8 +37,8 @@ public class CashierScreen extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -79,45 +79,42 @@ public class CashierScreen extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 90));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel2.setText("Selamat Datang, Kasir");
+        jLabel2.setText("Selamat Datang, ADMIN");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, -1, -1));
 
         jLabel5.setText("jLabel5");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 480, 160));
 
         jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton3.setText("Konfigurasi Harga");
+        jButton3.setText("Tambah Aset Kendaraan");
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 440, 110));
+        jButton3.addActionListener(this::jButton3ActionPerformed);
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 440, 110));
 
         jButton6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton6.setText("Input Harga");
+        jButton6.setText("Konfigurasi Jadwal");
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jButton6.addActionListener(this::jButton6ActionPerformed);
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 440, 110));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 700, 180, 40));
 
         jButton4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton4.setText("Laporan Keuangan");
+        jButton4.setText("Karyawan");
         jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, 440, 110));
-        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 700, 180, 30));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 440, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        PriceInput uang = new PriceInput();
-        uang.setVisible(true);
-        
-        this.dispose();
-    }//GEN-LAST:event_jButton6ActionPerformed
-
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        HomeScreen home = new HomeScreen();
-        home.setVisible(true);
+    HomeScreen home = new HomeScreen();
+    home.setVisible(true);
     
-        this.dispose(); 
+    this.dispose();  
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,7 +138,7 @@ public class CashierScreen extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new CashierScreen().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new AdminScreen().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

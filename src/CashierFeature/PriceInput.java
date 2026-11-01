@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package travelline;
+package CashierFeature;
+
+import FrontUI.CashierScreen;
 
 /**
  *
@@ -10,6 +12,7 @@ package travelline;
  */
 public class PriceInput extends javax.swing.JFrame {
     
+    PaymentOptions bayar = new PaymentOptions();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PriceInput.class.getName());
 
     /**
@@ -17,6 +20,10 @@ public class PriceInput extends javax.swing.JFrame {
      */
     public PriceInput() {
         initComponents();
+        jTextField4.setVisible(false);
+        jTextField3.setVisible(false);
+        jLabel8.setVisible(false);
+        jLabel9.setVisible(false);
     }
 
     /**
@@ -33,21 +40,30 @@ public class PriceInput extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jLabel8.setVisible(false);
         jLabel9 = new javax.swing.JLabel();
+        jLabel9.setVisible(false);
         jTextField3 = new javax.swing.JTextField();
+        jTextField3.setVisible(false);
         jLabel10 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jTextField4 = new javax.swing.JTextField();
+        jTextField4.setVisible(false);
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
+        jTextField5 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField8 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -66,7 +82,6 @@ public class PriceInput extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton5.setText("jButton5");
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -88,81 +103,135 @@ public class PriceInput extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 90));
 
-        jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel5.setText("Nama Penumpang");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
-
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel6.setText("Rute");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-
-        jComboBox1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 320, -1));
-
-        jComboBox2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 320, -1));
-
-        jComboBox3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 320, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel7.setText("Kode Kendaraan");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jTextField2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jTextField2.setEnabled(false);
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 320, -1));
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 320, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel8.setText("Kembalian");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel9.setText("Uang yang Diterima");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, -1, -1));
 
         jTextField3.setEditable(false);
         jTextField3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jTextField3.setEnabled(false);
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 320, -1));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 510, 320, -1));
 
         jLabel10.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel10.setText("Metode Pembayaran");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, -1, -1));
 
         jComboBox4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Silahkan Pilih", "Transfer", "QRIS", "Tunai" }));
         jComboBox4.addActionListener(this::jComboBox4ActionPerformed);
-        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 320, -1));
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 320, -1));
 
         jLabel11.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel11.setText("Biaya");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
 
         jTextField4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jTextField4.addActionListener(this::jTextField4ActionPerformed);
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 320, -1));
-        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, 180, 30));
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 460, 320, -1));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 600, 180, 30));
+
+        jTextField5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jTextField5.setEnabled(false);
+        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 320, -1));
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel12.setText("Nama Penumpang");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel13.setText("No Kursi");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 310, -1, -1));
+
+        jTextField6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jTextField6.setEnabled(false);
+        getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 320, -1));
+
+        jTextField7.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jTextField7.setEnabled(false);
+        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, 320, -1));
+
+        jTextField8.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jTextField8.setEnabled(false);
+        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 320, -1));
+
+        jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jButton1.setText("OK");
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 560, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel14.setText("Waktu");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
+
+        jTextField9.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jTextField9.setEnabled(false);
+        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 260, 320, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-    CashierScreen kasir = new CashierScreen();
-    kasir.setVisible(true);
+        CashierScreen kasir = new CashierScreen();
+        kasir.setVisible(true);
     
-    this.dispose();  
+        this.dispose();  
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
-        if (jComboBox4.getSelectedItem().toString().equals("Lainnya"))
+        String pilihan = jComboBox4.getSelectedItem().toString();
+        if (pilihan.equals("QRIS"))
         {
-            PaymentOptions bayar = new PaymentOptions();
+            if (bayar != null){
+                bayar.dispose();
+            }
             bayar.setVisible(true);
+            bayar.jLabel1.setIcon(new javax.swing.ImageIcon("Image/Desain tanpa judul(3).png"));
+            jLabel8.setVisible(false);
+            jLabel9.setVisible(false);
+            jTextField3.setVisible(false);
+            jTextField4.setVisible(false);
+        }
+        if (pilihan.equals("Transfer"))
+        {
+            if (bayar != null){
+                bayar.dispose();
+            }
+            bayar.setVisible(true);
+            bayar.jLabel1.setIcon(new javax.swing.ImageIcon("Image/Desain tanpa judul(3).png"));
+            jLabel8.setVisible(false);
+            jLabel9.setVisible(false);
+            jTextField3.setVisible(false);
+            jTextField4.setVisible(false);
+        }
+        if (pilihan.equals("Tunai"))
+        {
+            if (bayar != null){
+                bayar.dispose();
+            }
+            jLabel8.setVisible(true);
+            jLabel9.setVisible(true);
+            jTextField3.setVisible(true);
+            jTextField4.setVisible(true);
+        }
+        else {
+         return;
         }
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
@@ -193,17 +262,17 @@ public class PriceInput extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -212,5 +281,10 @@ public class PriceInput extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
 }

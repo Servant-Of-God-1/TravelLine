@@ -2,20 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package travelline;
+package AdminFeature;
+
+import FrontUI.*;
 
 /**
  *
  * @author USER
  */
-public class EmployeConfiguration extends javax.swing.JFrame {
+public class ScheduleListConfiguration extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EmployeConfiguration.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ScheduleListConfiguration.class.getName());
 
     /**
-     * Creates new form EmployeConfiguration
+     * Creates new form ScheduleList
      */
-    public EmployeConfiguration() {
+    public ScheduleListConfiguration() {
         initComponents();
     }
 
@@ -77,7 +79,7 @@ public class EmployeConfiguration extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jButton1.setText("Tambah Karyawan?");
+        jButton1.setText("Tambah Jadwal");
         jButton1.addActionListener(this::jButton1ActionPerformed);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 770, 550, 60));
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 550, 660));
@@ -94,10 +96,7 @@ public class EmployeConfiguration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AddEmploye tambahkaryawan = new AddEmploye();
-        tambahkaryawan.setVisible(true);
-
-        this.dispose();
+        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -122,7 +121,7 @@ public class EmployeConfiguration extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new EmployeConfiguration().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ScheduleListConfiguration().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
