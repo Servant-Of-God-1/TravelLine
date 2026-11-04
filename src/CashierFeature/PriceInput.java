@@ -4,6 +4,7 @@
  */
 package CashierFeature;
 
+import PaymentOptionFeature.PaymentOptions;
 import FrontUI.CashierScreen;
 
 /**
@@ -65,7 +66,7 @@ public class PriceInput extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -207,6 +208,7 @@ public class PriceInput extends javax.swing.JFrame {
             jLabel9.setVisible(false);
             jTextField3.setVisible(false);
             jTextField4.setVisible(false);
+            return;
         }
         if (pilihan.equals("Transfer"))
         {
@@ -219,6 +221,7 @@ public class PriceInput extends javax.swing.JFrame {
             jLabel9.setVisible(false);
             jTextField3.setVisible(false);
             jTextField4.setVisible(false);
+            return;
         }
         if (pilihan.equals("Tunai"))
         {
@@ -229,9 +232,13 @@ public class PriceInput extends javax.swing.JFrame {
             jLabel9.setVisible(true);
             jTextField3.setVisible(true);
             jTextField4.setVisible(true);
+            return;
         }
         else {
-         return;
+            if (bayar != null){
+                bayar.dispose();
+            }
+            return;
         }
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
