@@ -6,6 +6,7 @@ package CashierFeature;
 
 import PaymentOptionFeature.PaymentOptions;
 import FrontUI.CashierScreen;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -195,36 +196,43 @@ public class PriceInput extends javax.swing.JFrame {
         this.dispose();  
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    public void pemeriksaan() {
+        if (bayar != null){
+            bayar.dispose();
+        }
+        bayar = new PaymentOptions();
+    }
+    
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
         String pilihan = jComboBox4.getSelectedItem().toString();
-        if (pilihan.equals("QRIS"))
-        {
-            if (bayar != null){
-                bayar.dispose();
+        try {
+            if (pilihan.equals("QRIS")) {
+                pemeriksaan();
+                bayar.jLabel1.setIcon(new ImageIcon(getClass().getResource("/Image/PaymentOption/QRIS.png")));
+                jLabel8.setVisible(false);
+                jLabel9.setVisible(false);
+                jTextField3.setVisible(false);
+                jTextField4.setVisible(false);
+                bayar.pack();
+                bayar.setLocationRelativeTo(null);
+                bayar.setVisible(true);
+                return;
             }
-            bayar.setVisible(true);
-            bayar.jLabel1.setIcon(new javax.swing.ImageIcon("Image/Desain tanpa judul(3).png"));
-            jLabel8.setVisible(false);
-            jLabel9.setVisible(false);
-            jTextField3.setVisible(false);
-            jTextField4.setVisible(false);
-            return;
-        }
-        if (pilihan.equals("Transfer"))
-        {
-            if (bayar != null){
-                bayar.dispose();
+            else if (pilihan.equals("Transfer"))
+            {
+                pemeriksaan();
+                bayar.jLabel1.setIcon(new ImageIcon(getClass().getResource("")));
+                jLabel8.setVisible(false);
+                jLabel9.setVisible(false);
+                jTextField3.setVisible(false);
+                jTextField4.setVisible(false);
+                bayar.pack();
+                bayar.setLocationRelativeTo(null);
+                bayar.setVisible(true);
+                return;
             }
-            bayar.setVisible(true);
-            bayar.jLabel1.setIcon(new javax.swing.ImageIcon("Image/Desain tanpa judul(3).png"));
-            jLabel8.setVisible(false);
-            jLabel9.setVisible(false);
-            jTextField3.setVisible(false);
-            jTextField4.setVisible(false);
-            return;
-        }
-        if (pilihan.equals("Tunai"))
-        {
+            else if (pilihan.equals("Tunai"))
+            {
             if (bayar != null){
                 bayar.dispose();
             }
@@ -233,12 +241,20 @@ public class PriceInput extends javax.swing.JFrame {
             jTextField3.setVisible(true);
             jTextField4.setVisible(true);
             return;
-        }
-        else {
+            }
+            else {
             if (bayar != null){
                 bayar.dispose();
             }
+            jLabel8.setVisible(false);
+            jLabel9.setVisible(false);
+            jTextField3.setVisible(false);
+            jTextField4.setVisible(false);
             return;
+            }
+        }    
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
