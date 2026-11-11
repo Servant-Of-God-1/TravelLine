@@ -4,11 +4,15 @@
  */
 package AdminFeature;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author USER
  */
 public class AddEmploye extends javax.swing.JFrame {
+
+EmployeConfiguration karyawan = new EmployeConfiguration();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddEmploye.class.getName());
 
@@ -45,7 +49,7 @@ public class AddEmploye extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -62,7 +66,6 @@ public class AddEmploye extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton5.setText("jButton5");
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -101,12 +104,10 @@ public class AddEmploye extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jButton1.setText("jButton1");
         jButton1.addActionListener(this::jButton1ActionPerformed);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 40, 40));
 
         jPasswordField1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jPasswordField1.setText("jPasswordField1");
         jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 190, 340, -1));
 
@@ -115,16 +116,16 @@ public class AddEmploye extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jButton2.setText("jButton1");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 40, 40));
 
         jPasswordField2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jPasswordField2.setText("jPasswordField1");
         jPasswordField2.addActionListener(this::jPasswordField2ActionPerformed);
         getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 340, -1));
 
         jButton3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton3.setText("Tambah");
+        jButton3.addActionListener(this::jButton3ActionPerformed);
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 300, -1, -1));
         getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 180, 30));
 
@@ -144,12 +145,52 @@ public class AddEmploye extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if (jPasswordField1.getEchoChar() != (char)0) {
+            jPasswordField1.setEchoChar((char)0);
+            return;
+        }
+        else {
+            jPasswordField1.setEchoChar((char)'*');
+            return;
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        karyawan.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    if (String.valueOf(jTextField1.getText()).isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(rootPane, "Harap Masukkan Username Terlebih Dahulu");
+        return;
+    }
+    if (String.valueOf(jPasswordField1.getPassword()).isEmpty() || String.valueOf(jPasswordField2.getPassword()).isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(rootPane, "Harap Masukkan Password Terlebih Dahulu");
+        return;
+    }
+    if (String.valueOf(jPasswordField1.getPassword()).equals(String.valueOf(jPasswordField2.getPassword()))) {
+    Object[] pilihan = {"Ya", "Tidak"};
+    int hasil = javax.swing.JOptionPane.showOptionDialog(rootPane, "Apakah yakin ingin menambahkan karyawan?", "Konfirmasi", javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.QUESTION_MESSAGE, null, pilihan, pilihan);
+        if (hasil == javax.swing.JOptionPane.YES_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(rootPane, "Karyawan berhasil ditambahkan!");
+            karyawan.setVisible(true);
+            this.dispose();
+            return;
+        }
+    }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        if (jPasswordField2.getEchoChar() != (char)0) {
+            jPasswordField2.setEchoChar((char)0);
+            return;
+        }
+        else {
+            jPasswordField2.setEchoChar((char)'*');
+            return;
+        }       
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

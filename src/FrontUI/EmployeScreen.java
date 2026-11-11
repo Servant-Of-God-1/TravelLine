@@ -44,7 +44,7 @@ public class EmployeScreen extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, 180, 30));
 

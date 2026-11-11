@@ -42,7 +42,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20), new java.awt.Dimension(32767, 20));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -83,7 +83,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton1.setText("OK");
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 80, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 80, -1));
 
         jComboBox2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lainnya", "YNTKTS" }));
@@ -101,7 +101,7 @@ public class AddVehicle extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel13.setText("Kode Kendaraan Baru");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 190, -1, -1));
-        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 290, 150, 30));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 350, 150, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

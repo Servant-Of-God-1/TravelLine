@@ -5,6 +5,13 @@
 package CashierFeature;
 
 import FrontUI.CashierScreen;
+import javax.swing.ImageIcon;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSpinner;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 
 /**
  *
@@ -18,8 +25,57 @@ public class PriceConfiguration extends javax.swing.JFrame {
      * Creates new form PriceConfiguration
      */
     public PriceConfiguration() {
-        initComponents();
-    }
+    initComponents();
+    
+    // ==========================================
+    // 1. SET MODEL SPINNER (NilaiAwal, Minimal, Maksimal, LangkahKlik)
+    // ==========================================
+    jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.1d));
+    jSpinner2.setModel(new javax.swing.SpinnerNumberModel(1000d, 1000d, null, 1d));     
+    jSpinner4.setModel(new javax.swing.SpinnerNumberModel(10000d, 10000d, null, 100d)); 
+    jSpinner5.setModel(new javax.swing.SpinnerNumberModel(10000d, 10000d, null, 100d)); 
+    
+    // ==========================================
+    // 2. BUAT EDITOR & FORMAT TAMPILAN
+    // ==========================================
+    javax.swing.JSpinner.NumberEditor editor1 = new javax.swing.JSpinner.NumberEditor(jSpinner1, "0.0");
+    jSpinner1.setEditor(editor1);
+    
+    javax.swing.JSpinner.NumberEditor editor2 = new javax.swing.JSpinner.NumberEditor(jSpinner2, "#,##0");
+    jSpinner2.setEditor(editor2);
+    
+    javax.swing.JSpinner.NumberEditor editor4 = new javax.swing.JSpinner.NumberEditor(jSpinner4, "#,##0");
+    jSpinner4.setEditor(editor4);
+    
+    javax.swing.JSpinner.NumberEditor editor5 = new javax.swing.JSpinner.NumberEditor(jSpinner5, "#,##0");
+    jSpinner5.setEditor(editor5);
+    
+    // ==========================================
+    // 3. PASANG KEY LISTENER (BLOKIR HURUF INSTAN)
+    // ==========================================
+    java.awt.event.KeyAdapter blokirHurufDanSimbol = new java.awt.event.KeyAdapter() {
+        @Override
+        public void keyTyped(java.awt.event.KeyEvent e) {
+            char c = e.getKeyChar();
+            
+            // Periksa apakah karakter yang diketik adalah angka, titik, atau koma
+            boolean apakahKarakterValid = Character.isDigit(c) || c == '.' || c == ',';
+            
+            // Jika BUKAN karakter valid, langsung hancurkan inputannya di tempat!
+            if (!apakahKarakterValid) {
+                e.consume(); // Perintah ini membatalkan ketikan agar tidak muncul di layar
+            }
+        }
+    };
+    
+    // Pasang aturan instan ini ke kotak teks internal semua spinner Anda
+    editor1.getTextField().addKeyListener(blokirHurufDanSimbol);
+    editor2.getTextField().addKeyListener(blokirHurufDanSimbol);
+    editor4.getTextField().addKeyListener(blokirHurufDanSimbol);
+    editor5.getTextField().addKeyListener(blokirHurufDanSimbol);
+}
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,78 +86,147 @@ public class PriceConfiguration extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        jSpinner2 = new javax.swing.JSpinner();
+        jSpinner4 = new javax.swing.JSpinner();
+        jSpinner5 = new javax.swing.JSpinner();
+        jButton1 = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jLabel4.setText("Konsumen Puas, Kami Senang");
+
+        jButton5.addActionListener(this::jButton5ActionPerformed);
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel3.setText("TravelLine");
 
         jLabel1.setText("jLabel1");
 
-        jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel4.setText("Konsumen Puas, Kami Senang");
-
-        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-
-        jButton5.addActionListener(this::jButton5ActionPerformed);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(496, Short.MAX_VALUE)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 323, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(90, 90, 90)
-                        .addComponent(jLabel4))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel4))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 210, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/gas.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 130, 160, 150));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/gas-price.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 160, 150));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/vehicle.png"))); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 160, 150));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/money-jar.png"))); // NOI18N
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 160, 150));
+
+        jLabel9.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel9.setText("Konsumsi");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 160, 30));
+
+        jLabel10.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel10.setText("Bakar");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 330, 160, 30));
+
+        jLabel11.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel11.setText("Driver");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 160, 30));
+
+        jLabel12.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel12.setText("Dana Darurat");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 290, 160, 30));
+
+        jSpinner1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
+        getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 160, -1));
+
+        jSpinner2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(1000, 1000, null, 1));
+        getContentPane().add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 160, -1));
+
+        jSpinner4.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jSpinner4.setModel(new javax.swing.SpinnerNumberModel(10000, 10000, null, 1));
+        getContentPane().add(jSpinner4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 370, 160, -1));
+
+        jSpinner5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jSpinner5.setModel(new javax.swing.SpinnerNumberModel(10000, 10000, null, 1));
+        getContentPane().add(jSpinner5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 370, 160, -1));
+
+        jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(this::jButton1ActionPerformed);
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, -1, -1));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 480, 70, 30));
+
+        jLabel19.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel19.setText("Pemeriksaan");
+        getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 160, 30));
+
+        jLabel20.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel20.setText("Bahan Bakar");
+        getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 160, 30));
+
+        jLabel14.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel14.setText("Biaya Operasional / Minggu");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel13.setText("Harga Bahan");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 160, 30));
+
+        jLabel15.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jLabel15.setText("Driver");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 330, 160, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -112,6 +237,35 @@ public class PriceConfiguration extends javax.swing.JFrame {
     
     this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    if (String.valueOf(jLabel1.getIcon()) != null){
+        Object[] pilihan = {"Ya", "Tidak"};
+        int hasil = javax.swing.JOptionPane.showOptionDialog(rootPane, "Apakah yakin data ini sudah benar", "Konfirmasi", javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.QUESTION_MESSAGE, null, pilihan, pilihan);
+        if (hasil == javax.swing.JOptionPane.YES_OPTION) {
+            javax.swing.JOptionPane.showMessageDialog(rootPane, "Harap Masukkan data biaya operasional / bulan");
+            jLabel4.setText("Biaya Operasional / Bulan");
+            // Menghapus Elemen
+            jPanel1.remove(jLabel20);
+            jPanel1.remove(jLabel11);
+            // GAMBAR
+            jLabel5.setIcon(new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png")));
+            jLabel2.setIcon(new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/apartment.png")));
+            jLabel7.setIcon(new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/money-management.png")));
+            jLabel8.setIcon(new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/money-jar.png")));
+            // Teks
+            jLabel13.setText("Total Gaji");
+            jLabel10.setText("Pegawai");
+            jLabel9.setText("Total Biaya");
+            jLabel20.setText("Sewa Ruko");
+            jLabel19.setText("Total Biaya");
+            jLabel11.setText("Operasional");
+            jLabel12.setText("Dana Darurat");
+            jLabel15.setText("Armada");
+            return;
+        }
+    }            // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,10 +293,29 @@ public class PriceConfiguration extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JSpinner jSpinner2;
+    private javax.swing.JSpinner jSpinner4;
+    private javax.swing.JSpinner jSpinner5;
     // End of variables declaration//GEN-END:variables
 }

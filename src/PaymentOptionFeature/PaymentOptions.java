@@ -30,10 +30,7 @@ public class PaymentOptions extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\Desain tanpa judul (3).png")); // NOI18N
-        jLabel1.setText("jLabel1");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

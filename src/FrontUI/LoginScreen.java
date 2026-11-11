@@ -97,12 +97,12 @@ public class LoginScreen extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 40, 40));
 
         jPasswordField1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jPasswordField1.setText("jPasswordField1");
         jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
         getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 340, -1));
 
         jButton2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton2.setText("OK");
+        jButton2.addActionListener(this::jButton2ActionPerformed);
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, -1, -1));
         getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 280, 150, 30));
 
@@ -118,7 +118,14 @@ public class LoginScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        if (jPasswordField1.getEchoChar() != (char)0) {
+            jPasswordField1.setEchoChar((char)0);
+            return;
+        }
+        else {
+            jPasswordField1.setEchoChar((char)'*');
+            return;
+        }    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -127,6 +134,18 @@ public class LoginScreen extends javax.swing.JFrame {
     
     this.dispose(); 
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    if (String.valueOf(jTextField1.getText()).isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(rootPane, "Harap Masukkan Username Terlebih Dahulu");
+        return;
+    }
+        
+    if (String.valueOf(jPasswordField1.getPassword()).isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(rootPane, "Harap Masukkan Password Terlebih Dahulu");
+        return;
+    }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

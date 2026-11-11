@@ -4,15 +4,16 @@
  */
 package ConsumerFeature;
 
-import CashierFeature.*;
+import PaymentOptionFeature.PaymentOptions;
 import FrontUI.CashierScreen;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author USER
  */
 public class PriceInputConsumer extends javax.swing.JFrame {
-    
+    PaymentOptions bayar = new PaymentOptions();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PriceInputConsumer.class.getName());
 
     /**
@@ -53,7 +54,7 @@ public class PriceInputConsumer extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jTextField9 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
@@ -162,12 +163,41 @@ public class PriceInputConsumer extends javax.swing.JFrame {
     
     this.dispose();  
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    public void pemeriksaan() {
+        if (bayar != null){
+            bayar.dispose();
+        }
+        bayar = new PaymentOptions();
+    }
+    
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
-        if (jComboBox4.getSelectedItem().toString().equals("Lainnya"))
-        {
-            PaymentOptions bayar = new PaymentOptions();
-            bayar.setVisible(true);
+        String pilihan = jComboBox4.getSelectedItem().toString();
+        try {
+            if (pilihan.equals("QRIS")) {
+                pemeriksaan();
+                bayar.jLabel1.setIcon(new ImageIcon(getClass().getResource("/Image/PaymentOption/QRIS.png")));
+                bayar.pack();
+                bayar.setLocationRelativeTo(null);
+                bayar.setVisible(true);
+                return;
+            }
+            else if (pilihan.equals("Transfer"))
+            {
+                pemeriksaan();
+                bayar.jLabel1.setIcon(new ImageIcon(getClass().getResource("")));
+                bayar.pack();
+                bayar.setLocationRelativeTo(null);
+                bayar.setVisible(true);
+                return;
+            }
+            else {
+                if (bayar != null){
+                    bayar.dispose();
+                }  
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
