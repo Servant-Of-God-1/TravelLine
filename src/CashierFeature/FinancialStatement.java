@@ -4,6 +4,8 @@
  */
 package CashierFeature;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author USER
@@ -17,6 +19,9 @@ public class FinancialStatement extends javax.swing.JFrame {
      */
     public FinancialStatement() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**

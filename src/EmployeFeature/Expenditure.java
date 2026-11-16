@@ -4,6 +4,8 @@
  */
 package EmployeFeature;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author USER
@@ -16,7 +18,10 @@ public class Expenditure extends javax.swing.JFrame {
      * Creates new form Expenditure
      */
     public Expenditure() {
-        initComponents();
+        	initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**

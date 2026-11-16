@@ -22,6 +22,9 @@ public class PriceInput extends javax.swing.JFrame {
      */
     public PriceInput() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
         jTextField4.setVisible(false);
         jTextField3.setVisible(false);
         jLabel8.setVisible(false);

@@ -4,6 +4,8 @@
  */
 package FrontUI;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author USER
@@ -16,7 +18,10 @@ public class AdminScreen extends javax.swing.JFrame {
      * Creates new form AdminScreen
      */
     public AdminScreen() {
-        initComponents();
+        	initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**
@@ -106,7 +111,7 @@ public class AdminScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-    HomeScreen home = new HomeScreen();
+    LoginScreen home = new LoginScreen();
     home.setVisible(true);
     
     this.dispose();  

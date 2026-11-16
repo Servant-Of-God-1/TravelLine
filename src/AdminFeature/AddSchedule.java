@@ -5,6 +5,10 @@
 package AdminFeature;
 
 import FrontUI.CashierScreen;
+import javax.swing.ImageIcon;
+import javax.swing.JFormattedTextField;
+import javax.swing.JSpinner.DateEditor;
+import javax.swing.text.DateFormatter;
 
 /**
  *
@@ -19,6 +23,15 @@ public class AddSchedule extends javax.swing.JFrame {
      */
     public AddSchedule() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
+        DateEditor editor = new DateEditor(jSpinner1, "HH:mm");
+        jSpinner1.setEditor(editor);
+        
+        DateFormatter formatter = (DateFormatter) editor.getTextField().getFormatter();
+        formatter.setAllowsInvalid(false);
+        formatter.setOverwriteMode(true);
     }
 
     /**
@@ -42,10 +55,10 @@ public class AddSchedule extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        javax.swing.JSpinner jSpinner1 = new javax.swing.JSpinner();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20), new java.awt.Dimension(32767, 20));
+        jSpinner1 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -116,13 +129,6 @@ public class AddSchedule extends javax.swing.JFrame {
         jLabel13.setText("Kode Kendaraan");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, -1, -1));
 
-        jSpinner1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jSpinner1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR_OF_DAY));
-        jSpinner1.setToolTipText("");
-        jSpinner1.setName(""); // NOI18N
-        javax.swing.JSpinner.DateEditor editor = new javax.swing.JSpinner.DateEditor(jSpinner1, "HH:mm");   jSpinner1.setEditor(editor);  editor.getTextField().setEditable(false);
-        getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 320, -1));
-
         jLabel14.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel14.setText("Rute Baru");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, -1, -1));
@@ -131,6 +137,10 @@ public class AddSchedule extends javax.swing.JFrame {
         jLabel15.setText("Jam");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 480, -1, -1));
         getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 580, 150, 30));
+
+        jSpinner1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jSpinner1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(), null, null, java.util.Calendar.HOUR_OF_DAY));
+        getContentPane().add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 480, 320, 40));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -214,6 +224,7 @@ public class AddSchedule extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

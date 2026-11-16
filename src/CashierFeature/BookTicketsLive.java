@@ -5,7 +5,8 @@
 package CashierFeature;
 
 import FrontUI.CashierScreen;
-import FrontUI.HomeScreen;
+import FrontUI.LoginScreen;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,6 +21,9 @@ public class BookTicketsLive extends javax.swing.JFrame {
      */
     public BookTicketsLive() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**
@@ -37,14 +41,29 @@ public class BookTicketsLive extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        kursi3 = new javax.swing.JButton();
+        kursi5 = new javax.swing.JButton();
+        kursi4 = new javax.swing.JButton();
+        kursi12 = new javax.swing.JButton();
+        kursi6 = new javax.swing.JButton();
+        kursi7 = new javax.swing.JButton();
+        kursi8 = new javax.swing.JButton();
+        kursi9 = new javax.swing.JButton();
+        kursi10 = new javax.swing.JButton();
+        kursi11 = new javax.swing.JButton();
+        kursi13 = new javax.swing.JButton();
+        kursi14 = new javax.swing.JButton();
+        kursi15 = new javax.swing.JButton();
+        kursi2 = new javax.swing.JButton();
+        kursi1 = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -70,7 +89,7 @@ public class BookTicketsLive extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(496, Short.MAX_VALUE)
+                .addContainerGap(796, Short.MAX_VALUE)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
@@ -82,35 +101,89 @@ public class BookTicketsLive extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, -1));
 
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton1.setText("Pembayaran");
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 830, 550, 60));
-        getContentPane().add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 890, 20, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 730, 550, 60));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel2.setText("Rute");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 430, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel5.setText("Waktu");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel6.setText("Kode Kendaraan");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 480, -1, -1));
 
         jComboBox1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 340, -1));
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 480, 340, -1));
 
         jComboBox2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 340, -1));
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 340, -1));
 
         jComboBox3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 340, -1));
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 550, 490));
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 340, -1));
+
+        kursi3.setText("3");
+        kursi3.addActionListener(this::kursi3ActionPerformed);
+        getContentPane().add(kursi3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 450, 60, 70));
+
+        kursi5.setText("5");
+        kursi5.addActionListener(this::kursi5ActionPerformed);
+        getContentPane().add(kursi5, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 450, 60, 70));
+
+        kursi4.setText("4");
+        getContentPane().add(kursi4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 450, 60, 70));
+
+        kursi12.setText("12");
+        getContentPane().add(kursi12, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 690, 60, 70));
+
+        kursi6.setText("6");
+        kursi6.addActionListener(this::kursi6ActionPerformed);
+        getContentPane().add(kursi6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 530, 60, 70));
+
+        kursi7.setText("7");
+        getContentPane().add(kursi7, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 530, 60, 70));
+
+        kursi8.setText("8");
+        getContentPane().add(kursi8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 530, 60, 70));
+
+        kursi9.setText("9");
+        getContentPane().add(kursi9, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 610, 60, 70));
+
+        kursi10.setText("10");
+        kursi10.addActionListener(this::kursi10ActionPerformed);
+        getContentPane().add(kursi10, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 610, 60, 70));
+
+        kursi11.setText("11");
+        getContentPane().add(kursi11, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 610, 60, 70));
+
+        kursi13.setText("13");
+        getContentPane().add(kursi13, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 690, 60, 70));
+
+        kursi14.setText("14");
+        getContentPane().add(kursi14, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 690, 60, 70));
+
+        kursi15.setText("15");
+        kursi15.addActionListener(this::kursi15ActionPerformed);
+        getContentPane().add(kursi15, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 690, 60, 70));
+
+        kursi2.setText("2");
+        getContentPane().add(kursi2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, 60, 70));
+
+        kursi1.setText("1");
+        getContentPane().add(kursi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 340, 60, 70));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\Desain tanpa judul (4).png")); // NOI18N
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 100, -1, 690));
+
+        jLabel8.setText("jLabel8");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 550, 310));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -125,6 +198,26 @@ public class BookTicketsLive extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void kursi3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kursi3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kursi3ActionPerformed
+
+    private void kursi5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kursi5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kursi5ActionPerformed
+
+    private void kursi6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kursi6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kursi6ActionPerformed
+
+    private void kursi10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kursi10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kursi10ActionPerformed
+
+    private void kursi15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kursi15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_kursi15ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,7 +245,6 @@ public class BookTicketsLive extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.Box.Filler filler2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -164,7 +256,23 @@ public class BookTicketsLive extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton kursi1;
+    private javax.swing.JButton kursi10;
+    private javax.swing.JButton kursi11;
+    private javax.swing.JButton kursi12;
+    private javax.swing.JButton kursi13;
+    private javax.swing.JButton kursi14;
+    private javax.swing.JButton kursi15;
+    private javax.swing.JButton kursi2;
+    private javax.swing.JButton kursi3;
+    private javax.swing.JButton kursi4;
+    private javax.swing.JButton kursi5;
+    private javax.swing.JButton kursi6;
+    private javax.swing.JButton kursi7;
+    private javax.swing.JButton kursi8;
+    private javax.swing.JButton kursi9;
     // End of variables declaration//GEN-END:variables
 }

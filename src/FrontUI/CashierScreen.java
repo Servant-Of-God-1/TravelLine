@@ -4,10 +4,10 @@
  */
 package FrontUI;
 
+import CashierFeature.BookTicketsLive;
 import CashierFeature.FinancialStatement;
 import CashierFeature.PriceConfiguration;
-import CashierFeature.PriceInput;
-import ConsumerFeature.BookTickets;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -22,6 +22,9 @@ public class CashierScreen extends javax.swing.JFrame {
      */
     public CashierScreen() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**
@@ -113,14 +116,14 @@ public class CashierScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        BookTickets pesan = new BookTickets();
+        BookTicketsLive pesan = new BookTicketsLive();
         pesan.setVisible(true);
         
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        HomeScreen home = new HomeScreen();
+        LoginScreen home = new LoginScreen();
         home.setVisible(true);
     
         this.dispose(); 

@@ -4,6 +4,8 @@
  */
 package PaymentOptionFeature;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author USER
@@ -17,6 +19,9 @@ public class PaymentOptions extends javax.swing.JFrame {
      */
     public PaymentOptions() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**

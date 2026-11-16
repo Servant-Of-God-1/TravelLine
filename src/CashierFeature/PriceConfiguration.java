@@ -5,13 +5,13 @@
 package CashierFeature;
 
 import FrontUI.CashierScreen;
-import javax.swing.ImageIcon;
-import javax.swing.JFormattedTextField;
-import javax.swing.JSpinner;
-import javax.swing.text.AbstractDocument;
-import javax.swing.text.AttributeSet;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.DocumentFilter;
+import javax.swing.ImageIcon;import javax.swing.JSpinner.NumberEditor;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.JOptionPane.showOptionDialog;
+import javax.swing.JSpinner.NumberEditor;
+import javax.swing.SpinnerNumberModel;
 
 /**
  *
@@ -25,29 +25,32 @@ public class PriceConfiguration extends javax.swing.JFrame {
      * Creates new form PriceConfiguration
      */
     public PriceConfiguration() {
-    initComponents();
+    	initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     
     // ==========================================
     // 1. SET MODEL SPINNER (NilaiAwal, Minimal, Maksimal, LangkahKlik)
     // ==========================================
-    jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 0.1d));
-    jSpinner2.setModel(new javax.swing.SpinnerNumberModel(1000d, 1000d, null, 1d));     
-    jSpinner4.setModel(new javax.swing.SpinnerNumberModel(10000d, 10000d, null, 100d)); 
-    jSpinner5.setModel(new javax.swing.SpinnerNumberModel(10000d, 10000d, null, 100d)); 
+    jSpinner1.setModel(new SpinnerNumberModel(0.0d, 0.0d, null, 0.1d));
+    jSpinner2.setModel(new SpinnerNumberModel(1000d, 1000d, null, 1d));     
+    jSpinner4.setModel(new SpinnerNumberModel(10000d, 10000d, null, 100d)); 
+    jSpinner5.setModel(new SpinnerNumberModel(10000d, 10000d, null, 100d)); 
     
     // ==========================================
     // 2. BUAT EDITOR & FORMAT TAMPILAN
     // ==========================================
-    javax.swing.JSpinner.NumberEditor editor1 = new javax.swing.JSpinner.NumberEditor(jSpinner1, "0.0");
+    NumberEditor editor1 = new NumberEditor(jSpinner1, "0.0");
     jSpinner1.setEditor(editor1);
     
-    javax.swing.JSpinner.NumberEditor editor2 = new javax.swing.JSpinner.NumberEditor(jSpinner2, "#,##0");
+    NumberEditor editor2 = new NumberEditor(jSpinner2, "#,##0");
     jSpinner2.setEditor(editor2);
     
-    javax.swing.JSpinner.NumberEditor editor4 = new javax.swing.JSpinner.NumberEditor(jSpinner4, "#,##0");
+    NumberEditor editor4 = new NumberEditor(jSpinner4, "#,##0");
     jSpinner4.setEditor(editor4);
     
-    javax.swing.JSpinner.NumberEditor editor5 = new javax.swing.JSpinner.NumberEditor(jSpinner5, "#,##0");
+    NumberEditor editor5 = new NumberEditor(jSpinner5, "#,##0");
     jSpinner5.setEditor(editor5);
     
     // ==========================================
@@ -241,9 +244,9 @@ public class PriceConfiguration extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     if (String.valueOf(jLabel1.getIcon()) != null){
         Object[] pilihan = {"Ya", "Tidak"};
-        int hasil = javax.swing.JOptionPane.showOptionDialog(rootPane, "Apakah yakin data ini sudah benar", "Konfirmasi", javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.QUESTION_MESSAGE, null, pilihan, pilihan);
-        if (hasil == javax.swing.JOptionPane.YES_OPTION) {
-            javax.swing.JOptionPane.showMessageDialog(rootPane, "Harap Masukkan data biaya operasional / bulan");
+        int hasil = showOptionDialog(rootPane, "Apakah yakin data ini sudah benar", "Konfirmasi", javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.QUESTION_MESSAGE, null, pilihan, pilihan);
+        if (hasil == JOptionPane.YES_OPTION) {
+            showMessageDialog(rootPane, "Harap Masukkan data biaya operasional / bulan");
             jLabel4.setText("Biaya Operasional / Bulan");
             // Menghapus Elemen
             jPanel1.remove(jLabel20);

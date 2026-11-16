@@ -6,6 +6,7 @@ package AdminFeature;
 
 import AdminFeature.AddEmploye;
 import FrontUI.CashierScreen;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,6 +21,9 @@ public class EmployeConfiguration extends javax.swing.JFrame {
      */
     public EmployeConfiguration() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**

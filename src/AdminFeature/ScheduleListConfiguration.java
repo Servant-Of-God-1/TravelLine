@@ -5,6 +5,7 @@
 package AdminFeature;
 
 import FrontUI.*;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -19,6 +20,9 @@ public class ScheduleListConfiguration extends javax.swing.JFrame {
      */
     public ScheduleListConfiguration() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**

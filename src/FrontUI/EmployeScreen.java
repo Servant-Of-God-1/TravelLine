@@ -6,6 +6,7 @@ package FrontUI;
 
 import EmployeFeature.Expenditure;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -20,6 +21,9 @@ public class EmployeScreen extends javax.swing.JFrame {
      */
     public EmployeScreen() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	setIconImage(icon.getImage());
     }
 
     /**
@@ -138,7 +142,7 @@ public class EmployeScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        HomeScreen home = new HomeScreen();
+        LoginScreen home = new LoginScreen();
         home.setVisible(true);
     
         this.dispose();
