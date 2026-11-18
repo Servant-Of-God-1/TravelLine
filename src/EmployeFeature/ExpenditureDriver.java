@@ -10,17 +10,17 @@ import javax.swing.ImageIcon;
  *
  * @author USER
  */
-public class Expenditure extends javax.swing.JFrame {
+public class ExpenditureDriver extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Expenditure.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ExpenditureDriver.class.getName());
 
     /**
      * Creates new form Expenditure
      */
-    public Expenditure() {
+    public ExpenditureDriver() {
         	initComponents();
 	setLocationRelativeTo(null);
-	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png"));
 	setIconImage(icon.getImage());
     }
 
@@ -34,6 +34,7 @@ public class Expenditure extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,7 +72,7 @@ public class Expenditure extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new Expenditure().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ExpenditureDriver().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

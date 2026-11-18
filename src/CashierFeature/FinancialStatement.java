@@ -20,7 +20,7 @@ public class FinancialStatement extends javax.swing.JFrame {
     public FinancialStatement() {
         initComponents();
 	setLocationRelativeTo(null);
-	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png"));
 	setIconImage(icon.getImage());
     }
 
@@ -34,6 +34,7 @@ public class FinancialStatement extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

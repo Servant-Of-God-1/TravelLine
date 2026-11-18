@@ -20,7 +20,7 @@ public class PaymentOptions extends javax.swing.JFrame {
     public PaymentOptions() {
         initComponents();
 	setLocationRelativeTo(null);
-	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png"));
 	setIconImage(icon.getImage());
     }
 

@@ -21,7 +21,7 @@ public class ScheduleListConfiguration extends javax.swing.JFrame {
     public ScheduleListConfiguration() {
         initComponents();
 	setLocationRelativeTo(null);
-	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png"));
 	setIconImage(icon.getImage());
     }
 
@@ -44,13 +44,14 @@ public class ScheduleListConfiguration extends javax.swing.JFrame {
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel3.setText("TravelLine");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 157, 40));
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\TRAVELLINE.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 62, 62));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -60,7 +61,7 @@ public class ScheduleListConfiguration extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton5.setText("jButton5");
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\icons8-home-30.png")); // NOI18N
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -93,14 +94,17 @@ public class ScheduleListConfiguration extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        CashierScreen kasir = new CashierScreen();
-        kasir.setVisible(true);
+        AdminScreen admin = new AdminScreen();
+        admin.setVisible(true);
 
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        AddSchedule jadwal = new AddSchedule();
+        jadwal.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

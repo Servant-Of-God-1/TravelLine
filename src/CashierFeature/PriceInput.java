@@ -23,7 +23,7 @@ public class PriceInput extends javax.swing.JFrame {
     public PriceInput() {
         initComponents();
 	setLocationRelativeTo(null);
-	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png"));
 	setIconImage(icon.getImage());
         jTextField4.setVisible(false);
         jTextField3.setVisible(false);
@@ -71,12 +71,14 @@ public class PriceInput extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel3.setText("TravelLine");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 157, 40));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\TRAVELLINE.png")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 62, 62));
 
@@ -87,6 +89,7 @@ public class PriceInput extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\icons8-home-30.png")); // NOI18N
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -117,6 +120,7 @@ public class PriceInput extends javax.swing.JFrame {
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jTextField2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
+        jTextField2.setEnabled(false);
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, 320, -1));
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N

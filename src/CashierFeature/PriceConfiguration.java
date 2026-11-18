@@ -5,8 +5,8 @@
 package CashierFeature;
 
 import FrontUI.CashierScreen;
-import javax.swing.ImageIcon;import javax.swing.JSpinner.NumberEditor;
-import javax.swing.SpinnerNumberModel;
+import java.awt.event.KeyAdapter;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.JOptionPane.showOptionDialog;
@@ -27,16 +27,16 @@ public class PriceConfiguration extends javax.swing.JFrame {
     public PriceConfiguration() {
     	initComponents();
 	setLocationRelativeTo(null);
-	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png"));
 	setIconImage(icon.getImage());
     
     // ==========================================
     // 1. SET MODEL SPINNER (NilaiAwal, Minimal, Maksimal, LangkahKlik)
     // ==========================================
     jSpinner1.setModel(new SpinnerNumberModel(0.0d, 0.0d, null, 0.1d));
-    jSpinner2.setModel(new SpinnerNumberModel(1000d, 1000d, null, 1d));     
+    jSpinner2.setModel(new SpinnerNumberModel(1000d, 1000d, null, 100d));     
     jSpinner4.setModel(new SpinnerNumberModel(10000d, 10000d, null, 100d)); 
-    jSpinner5.setModel(new SpinnerNumberModel(10000d, 10000d, null, 100d)); 
+    jSpinner5.setModel(new SpinnerNumberModel(10000d, 10000d, null, 100d));
     
     // ==========================================
     // 2. BUAT EDITOR & FORMAT TAMPILAN
@@ -56,7 +56,7 @@ public class PriceConfiguration extends javax.swing.JFrame {
     // ==========================================
     // 3. PASANG KEY LISTENER (BLOKIR HURUF INSTAN)
     // ==========================================
-    java.awt.event.KeyAdapter blokirHurufDanSimbol = new java.awt.event.KeyAdapter() {
+    KeyAdapter blokirHurufDanSimbol = new KeyAdapter() {
         @Override
         public void keyTyped(java.awt.event.KeyEvent e) {
             char c = e.getKeyChar();
@@ -115,6 +115,7 @@ public class PriceConfiguration extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
@@ -123,11 +124,13 @@ public class PriceConfiguration extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel4.setText("Konsumen Puas, Kami Senang");
 
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\icons8-home-30.png")); // NOI18N
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel3.setText("TravelLine");
 
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\TRAVELLINE.png")); // NOI18N
         jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -244,15 +247,20 @@ public class PriceConfiguration extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     if (String.valueOf(jLabel1.getIcon()) != null){
         Object[] pilihan = {"Ya", "Tidak"};
-        int hasil = showOptionDialog(rootPane, "Apakah yakin data ini sudah benar", "Konfirmasi", javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.QUESTION_MESSAGE, null, pilihan, pilihan);
+        int hasil = showOptionDialog(rootPane, "Apakah yakin data ini sudah benar", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, pilihan, pilihan);
         if (hasil == JOptionPane.YES_OPTION) {
             showMessageDialog(rootPane, "Harap Masukkan data biaya operasional / bulan");
+            // SetModel
+            jSpinner1.setModel(new SpinnerNumberModel(1000000d, 1000000d, null, 10000d));
+            jSpinner2.setModel(new SpinnerNumberModel(1000d, 1000d, null, 100d));     
+            jSpinner4.setModel(new SpinnerNumberModel(10000d, 10000d, null, 100d)); 
+            jSpinner5.setModel(new SpinnerNumberModel(10000d, 10000d, null, 100d)); 
             jLabel4.setText("Biaya Operasional / Bulan");
             // Menghapus Elemen
             jPanel1.remove(jLabel20);
             jPanel1.remove(jLabel11);
-            // GAMBAR
-            jLabel5.setIcon(new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png")));
+            // Gambar
+            jLabel5.setIcon(new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png")));
             jLabel2.setIcon(new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/apartment.png")));
             jLabel7.setIcon(new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/money-management.png")));
             jLabel8.setIcon(new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/money-jar.png")));

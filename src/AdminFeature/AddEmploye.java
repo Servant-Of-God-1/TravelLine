@@ -25,7 +25,7 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
     public AddEmploye() {
         initComponents();
 	setLocationRelativeTo(null);
-	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/InputPriceConfiguration/worker.png"));
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png"));
 	setIconImage(icon.getImage());
     }
 
@@ -53,21 +53,18 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
         jPasswordField2 = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
-        jLabel8 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel9 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jComboBox3 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel3.setText("TravelLine");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 157, 40));
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\TRAVELLINE.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 62, 62));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -77,6 +74,8 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
 
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\icons8-home-30.png")); // NOI18N
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -108,47 +107,33 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel6.setText("Password");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 40, 40));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 40, 40));
 
         jPasswordField1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 340, -1));
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 340, -1));
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel7.setText("Konfirmasi");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton2.addActionListener(this::jButton2ActionPerformed);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 360, 40, 40));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, 40, 40));
 
         jPasswordField2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jPasswordField2.addActionListener(this::jPasswordField2ActionPerformed);
-        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 360, 340, -1));
+        getContentPane().add(jPasswordField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 340, -1));
 
         jButton3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jButton3.setText("Tambah");
         jButton3.addActionListener(this::jButton3ActionPerformed);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 420, -1, -1));
-        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 180, 30));
-
-        jLabel8.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel8.setText("Kode Kendaraan");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
-
-        jComboBox1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 340, -1));
-
-        jLabel9.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel9.setText("Lokasi");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
-
-        jComboBox2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 340, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, -1));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 360, 180, 30));
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jLabel2.setText("Profesi");
@@ -156,6 +141,7 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
 
         jComboBox3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pilih Profesi", "Sopir", "Admin", "Cashir" }));
+        jComboBox3.addActionListener(this::jComboBox3ActionPerformed);
         getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 340, -1));
 
         pack();
@@ -190,24 +176,24 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-    if (String.valueOf(jTextField1.getText()).isEmpty()) {
-        showMessageDialog(rootPane, "Harap Masukkan Username Terlebih Dahulu");
-        return;
-    }
-    if (String.valueOf(jPasswordField1.getPassword()).isEmpty() || String.valueOf(jPasswordField2.getPassword()).isEmpty()) {
-        showMessageDialog(rootPane, "Harap Masukkan Password Terlebih Dahulu");
-        return;
-    }
-    if (String.valueOf(jPasswordField1.getPassword()).equals(String.valueOf(jPasswordField2.getPassword()))) {
-    Object[] pilihan = {"Ya", "Tidak"};
-    int hasil = showOptionDialog(rootPane, "Apakah yakin ingin menambahkan karyawan?", "Konfirmasi", javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.QUESTION_MESSAGE, null, pilihan, pilihan);
-        if (hasil == JOptionPane.YES_OPTION) {
-            showMessageDialog(rootPane, "Karyawan berhasil ditambahkan!");
-            karyawan.setVisible(true);
-            this.dispose();
+        if (String.valueOf(jTextField1.getText()).isEmpty()) {
+            showMessageDialog(rootPane, "Harap Masukkan Username Terlebih Dahulu");
             return;
         }
-    }
+        if (String.valueOf(jPasswordField1.getPassword()).isEmpty() || String.valueOf(jPasswordField2.getPassword()).isEmpty()) {
+            showMessageDialog(rootPane, "Harap Masukkan Password Terlebih Dahulu");
+            return;
+        }
+        if (String.valueOf(jPasswordField1.getPassword()).equals(String.valueOf(jPasswordField2.getPassword()))) {
+            Object[] pilihan = {"Ya", "Tidak"};
+            int hasil = showOptionDialog(rootPane, "Apakah yakin ingin menambahkan karyawan?", "Konfirmasi", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, pilihan, pilihan);
+            if (hasil == JOptionPane.YES_OPTION) {
+                showMessageDialog(rootPane, "Karyawan berhasil ditambahkan!");
+                karyawan.setVisible(true);
+                this.dispose();
+                return;
+            }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -220,6 +206,10 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
             return;
         }       
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+
+    }//GEN-LAST:event_jComboBox3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,8 +242,6 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -262,8 +250,6 @@ EmployeConfiguration karyawan = new EmployeConfiguration();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JPasswordField jPasswordField2;
