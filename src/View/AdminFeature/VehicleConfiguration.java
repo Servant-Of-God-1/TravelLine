@@ -5,20 +5,24 @@
 package View.AdminFeature;
 
 import View.FrontUI.AdminScreen;
+import javax.swing.ImageIcon;
 
 /**
  *
  * @author USER
  */
-public class AddLokets extends javax.swing.JFrame {
+public class VehicleConfiguration extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddLokets.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VehicleConfiguration.class.getName());
 
     /**
-     * Creates new form AddRoutes
+     * Creates new form EmployeConfiguration
      */
-    public AddLokets() {
+    public VehicleConfiguration() {
         initComponents();
+	setLocationRelativeTo(null);
+	ImageIcon icon = new ImageIcon(getClass().getResource("/Image/Logo/TRAVELLINE.png"));
+	setIconImage(icon.getImage());
     }
 
     /**
@@ -36,15 +40,10 @@ public class AddLokets extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton5 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 20), new java.awt.Dimension(0, 20), new java.awt.Dimension(32767, 20));
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -53,7 +52,6 @@ public class AddLokets extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 157, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USER\\Downloads\\TRAVELLINE.png")); // NOI18N
-        jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 62, 62));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
@@ -86,34 +84,11 @@ public class AddLokets extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jButton1.setText("OK");
+        jButton1.setText("Tambah Kendaraan ?");
         jButton1.addActionListener(this::jButton1ActionPerformed);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 300, 80, -1));
-
-        jLabel11.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel11.setText("Nama Pegawai 1");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel13.setText("Lokasi");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
-
-        jLabel15.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jLabel15.setText("Nama Pegawai 2");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
-        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, 150, 30));
-
-        jTextField1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jTextField1.addActionListener(this::jTextField1ActionPerformed);
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 340, -1));
-
-        jTextField2.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, 340, -1));
-
-        jTextField3.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jTextField3.addActionListener(this::jTextField3ActionPerformed);
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, 340, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 770, 550, 60));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 550, 660));
+        getContentPane().add(filler2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 830, 20, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -126,23 +101,11 @@ public class AddLokets extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        AdminScreen admin = new AdminScreen();
-        admin.setVisible(true);
+        AddVehicle tambahmobil = new AddVehicle();
+        tambahmobil.setVisible(true);
 
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,22 +129,17 @@ public class AddLokets extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new AddLokets().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new VehicleConfiguration().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

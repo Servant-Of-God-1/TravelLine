@@ -5,8 +5,9 @@
 package View.FrontUI;
 
 import View.AdminFeature.AddEmploye;
-import View.AdminFeature.InternalCompany;
+import View.AdminFeature.RoutesConfiguration;
 import View.AdminFeature.ScheduleListConfiguration;
+import View.AdminFeature.VehicleConfiguration;
 import javax.swing.ImageIcon;
 
 /**
@@ -46,6 +47,7 @@ public class AdminScreen extends javax.swing.JFrame {
         jButton6 = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 5), new java.awt.Dimension(0, 5), new java.awt.Dimension(32767, 5));
         jButton4 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setUndecorated(true);
@@ -89,23 +91,29 @@ public class AdminScreen extends javax.swing.JFrame {
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 480, 160));
 
         jButton3.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jButton3.setText("Konfigurasi Internal Perusahaan");
+        jButton3.setText("Konfigurasi Rute");
         jButton3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton3.addActionListener(this::jButton3ActionPerformed);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 440, 110));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 440, 110));
 
         jButton6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jButton6.setText("Konfigurasi Jadwal");
         jButton6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton6.addActionListener(this::jButton6ActionPerformed);
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 440, 110));
-        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 660, 180, 40));
+        getContentPane().add(filler1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 790, 180, 40));
 
         jButton4.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jButton4.setText("Konfigurasi Karyawan");
         jButton4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButton4.addActionListener(this::jButton4ActionPerformed);
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 440, 110));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 440, 110));
+
+        jButton7.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        jButton7.setText("Konfigurasi Kendaraan");
+        jButton7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jButton7.addActionListener(this::jButton7ActionPerformed);
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 680, 440, 110));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -118,8 +126,8 @@ public class AdminScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        InternalCompany Internal = new InternalCompany();
-        Internal.setVisible(true);
+        RoutesConfiguration Rute = new RoutesConfiguration();
+        Rute.setVisible(true);
         
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -137,6 +145,13 @@ public class AdminScreen extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        VehicleConfiguration mobil = new VehicleConfiguration();
+        mobil.setVisible(true);
+        
+        this.dispose();
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,6 +184,7 @@ public class AdminScreen extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

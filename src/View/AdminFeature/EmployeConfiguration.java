@@ -84,7 +84,7 @@ public class EmployeConfiguration extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
-        jButton1.setText("Tambah Karyawan?");
+        jButton1.setText("Tambah Karyawan ?");
         jButton1.addActionListener(this::jButton1ActionPerformed);
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 770, 550, 60));
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 550, 660));
